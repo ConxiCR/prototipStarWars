@@ -10,9 +10,6 @@ import { ListadoComponent } from './pages/listado/listado.component';
 import { HomeComponent } from './pages/home/home.component';
 
 
-
-
-
 @NgModule({
   declarations: [
     BuscarComponent,

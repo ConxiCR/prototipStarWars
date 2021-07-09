@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavesService } from '../../services/naves.service';
+import { Nave } from '../../interfaces/naves.interface';
 
 @Component({
   selector: 'app-listado',
@@ -9,11 +10,15 @@ import { NavesService } from '../../services/naves.service';
 })
 export class ListadoComponent implements OnInit {
 
+  naves: Nave[] = [];
+
   constructor( private navesService: NavesService) { }
 
   ngOnInit(): void {
+
     this.navesService.getNaves()
-      .subscribe(resp => console.log(resp));
+      .subscribe(console.log);
+      //.subscribe( naves => this.naves = naves );
   }
 
 }
