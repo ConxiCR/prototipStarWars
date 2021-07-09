@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavesService } from '../../services/naves.service';
 
 @Component({
   selector: 'app-listado',
@@ -8,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoComponent implements OnInit {
 
-  constructor() { }
+  constructor( private navesService: NavesService) { }
 
   ngOnInit(): void {
+    this.navesService.getNaves()
+      .subscribe(resp => console.log(resp));
   }
 
 }
