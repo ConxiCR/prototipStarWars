@@ -9,6 +9,10 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)
   },
   {
+    path: 'naves',
+    loadChildren: () => import('./naves/naves.module').then( m => m.NavesModule)
+  },
+  {
     path: '404',
     component: ErrorPageComponent
   },

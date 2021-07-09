@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { NavesRoutingModule } from './naves-routing.module';
+
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { ListadoComponent } from './pages/listado/listado.component';
+
 
 
 
@@ -12,7 +15,8 @@ import { ListadoComponent } from './pages/listado/listado.component';
     ListadoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NavesRoutingModule
   ]
 })
 export class NavesModule { }
