@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Auth } from 'src/app/auth/interface/auth.interface';
+import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +10,13 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor( private router: Router) { }
+ //esta propiedad siempre va a tener un valor
+  //auth!: Auth;
+  get auth(): Auth{
+    return this.AuthService.auth;
+  }
+  constructor( private router: Router,
+               private AuthService: AuthService) { }
 
   ngOnInit(): void {
   }

@@ -36,7 +36,10 @@
             <mat-icon>menu</mat-icon>
         </button>
         <span class="spacer"></span>
-        <button mat-button>logOut</button>
+        <!--mostramos el ususario activo-->
+        <span>Ruben S.W.{{ auth }}</span>
+        <button mat-button
+                (click)="logout()">logOut</button>
     </mat-toolbar>
     <div class="container">
        <router-outlet></router-outlet> 
