@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/guards/auth.guard';
 
 import {  ErrorPageComponent } from './shared/error-page/error-page.component';
 
 const routes: Routes = [
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule)    
   },
   {
     path: 'naves',
-    loadChildren: () => import('./naves/naves.module').then( m => m.NavesModule)
+    loadChildren: () => import('./naves/naves.module').then( m => m.NavesModule),
+    canLoad: [ AuthGuard ],
+    canActivate: [ AuthGuard ]
   },
   {
     path: '404',
