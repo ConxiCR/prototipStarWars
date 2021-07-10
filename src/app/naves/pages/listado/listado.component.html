@@ -1,8 +1,12 @@
 <h1>Listado de Naves</h1>
 
-<ul>
-    <li>
-    </li>
-</ul>
+<mat-divider></mat-divider>
+<br>
+
+<mat-card *ngFor="let nave of naves">
+    <mat-card-header>
+        <mat-card-title> {{ nave.name }}</mat-card-title>
+    </mat-card-header>
+</mat-card>
 
 
